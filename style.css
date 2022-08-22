@@ -1,0 +1,24 @@
+li {
+  list-style: none;
+  margin-bottom: 10px;
+}
+.paginator {
+  display: flex;
+  max-width: 300px;
+  flex-wrap: wrap;
+  line-height: 150%;
+}
+/* .paginator > span {
+  display: inline-block;
+  margin-right: 10px;
+  cursor: pointer;
+} */
+.active {
+  color: red;
+}
+.mr-3 {
+  margin-right: 3px;
+}
+a {
+  text-decoration: none;
+}
