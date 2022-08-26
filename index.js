@@ -1,5 +1,5 @@
 const item = document.getElementById("item");
-const title = getBlog();
+
 function append(parent, el) {
   return parent.appendChild(el);
 }
@@ -21,44 +21,49 @@ async function getBlog() {
   const data = await response.json();
   console.log(data);
 
-  const count = data.meta.pagination.total; //всего записей
-  const cnt = 20; //сколько отображаем записей на странице
-  const cnt_page = Math.ceil(count / cnt); //кол-во страниц
+  //const count = data.meta.pagination.total; //всего записей
+  //const cnt = 10; //сколько отображаем записей на странице
+  //const cnt_page = Math.ceil(count / cnt);
+  const pages = data.meta.pagination.pages; //кол-во страниц
 
   data.data.forEach((element) => {
-    renderList(element.title, element.id);
+    renderList(element.title, `post.html?id=${element.id}`);
   });
 
-  for (let i = 1; i < cnt_page; i++) {
+  for (let i = 1; i < pages; i++) {
     if (i === 1) {
       paginationPages(i, "index.html");
     }
   }
-  for (let i = 2; i <= cnt_page; i++) {
+  for (let i = 2; i <= pages; i++) {
     paginationPages(i, `index.html?page=${i}`);
   }
 }
+getBlog();
+
+//СТАТЬИ!!!
 function renderList(text, href) {
   const li = document.createElement("li");
   const a = document.createElement("a");
-  a.href = `article.html/${href}`; //ссылка-переход на др страницу со статьей
+  a.href = href; //ссылка-переход на др страницу со статьей
   a.textContent = text;
   item.append(li);
   li.append(a);
   return { li, a };
 }
 
+//ПАГИНАЦИЯ!!!!!!!
 const paginator = document.getElementById("paginator");
 
-function paginationPages(text, id) {
+function paginationPages(text, link) {
   const a = document.createElement("a");
   const li = document.createElement("li");
   a.textContent = text;
-  a.href = `https://gorest.co.in/public-api/posts/${id}`;
+  a.href = link;
 
   a.classList.add("mr-3");
   a.addEventListener("click", () => {
-    a.classList.add(".active");
+    a.classList.add("active");
   });
   paginator.append(li);
 
