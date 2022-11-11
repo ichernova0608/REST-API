@@ -52,7 +52,7 @@ fetch/async/await &amp; working with rest api
 
 
 
-Что такое DNS 
+DNS 
 Методы HTTP запросов 
 Коды статусов ответов 
 CORS 
