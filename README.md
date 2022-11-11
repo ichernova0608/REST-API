@@ -1,4 +1,4 @@
-# hw11
+# Работа с REST API
 fetch/async/await &amp; working with rest api
 #Задача
 
