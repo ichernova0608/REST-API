@@ -1,5 +1,5 @@
 body {
-  width: 1230;
+  width: 1230px;
   padding: 0 15px;
   margin: 0 auto;
 }
@@ -29,14 +29,45 @@ li {
   position: relative;
 }
 
-.active {
-  color: red;
-}
 .mr-3 {
   margin-right: 3px;
 }
-a {
+.item > li > a {
   color: black;
   text-decoration: none;
+}
+.item > li > a:active,
+.item > li > a:hover,
+.item > li > a:visited {
+  color: purple;
+  font-weight: bold;
+}
+.hidden {
+  display: none;
+}
+.pagination {
+  /* max-width: 50vw; */
+  padding: 0 10px;
+}
+#pages {
+  display: flex;
+}
+#cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 20px;
+}
+.card {
+  width: 18rem;
+  position: relative;
+}
+.card-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.card-img-top {
+  object-fit: cover;
+  height: 135px;
 }
 
