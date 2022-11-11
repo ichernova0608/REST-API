@@ -1,4 +1,5 @@
 # Работа с REST API
+# Посмотреть работу ----> https://ichernova0608.github.io/REST-API/ 
 fetch/async/await &amp; working with rest api
 #Задача
 
